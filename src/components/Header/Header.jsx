@@ -1,23 +1,28 @@
 import React from 'react';
-import { Button, Container, Form, Nav, NavLink, Navbar } from 'react-bootstrap';
+import './Header.css'
+import { Button, Container, Form, Nav, NavLink, Navbar} from 'react-bootstrap';
+import ActiveRoute from '../ActiveRoute/ActiveRoute';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
     return (
-        <Navbar bg="light" expand="lg">
+
+        <Navbar expand="lg">
             <Container fluid>
                 <Navbar.Brand href="/" className='fw-bold text-warning'>Chef's Dining</Navbar.Brand>
                 
-                    <Nav className="me-auto my-2 my-lg-0  d-flex text-dark">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/blog">Blogs</Nav.Link>
+                    <Nav className="me-auto my-2 my-lg-0  d-flex">
+                        <ActiveRoute href="/">Home</ActiveRoute>
+                        <ActiveRoute href='/blog'>Blogs</ActiveRoute>
+                        
                     </Nav>
-
 
                     <Nav.Link href="/login"><Button variant="btn btn-warning">Login</Button></Nav.Link>
                 
             </Container>
         </Navbar>
+        
     );
 };
 

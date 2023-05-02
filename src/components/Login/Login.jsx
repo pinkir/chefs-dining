@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
     return (
@@ -29,12 +30,10 @@ const Login = () => {
             </Form.Text>
             <br />
 
-            <Button variant="btn btn-success" type="submit" className='mt-5 mb-2 ms-5'>
-                Sign in with Google
+            <Button variant="btn btn-success" type="submit" className='mt-5 mb-2 ms-5'><FaGoogle></FaGoogle> Sign in with Google
             </Button>
             <br />
-            <Button variant="btn btn-secondary" type="submit" className='ms-5'>
-                Sign in with Github
+            <Button variant="btn btn-secondary" type="submit" className='ms-5'><FaGithub></FaGithub> Sign in with Github
             </Button>
         </Form>
     );

@@ -6,18 +6,15 @@ const Header = () => {
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="/">Chef's Dining</Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarScroll" />
-                    <Nav
-                        className="me-auto my-2 my-lg-0"
-                        navbarScroll
-                    >
+                <Navbar.Brand href="/" className='fw-bold text-warning'>Chef's Dining</Navbar.Brand>
+                
+                    <Nav className="me-auto my-2 my-lg-0  d-flex text-dark">
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/blog">Blogs</Nav.Link>
                     </Nav>
 
 
-                    <Nav.Link href="/login"><Button variant="outline-success">Login</Button></Nav.Link>
+                    <Nav.Link href="/login"><Button variant="btn btn-warning">Login</Button></Nav.Link>
                 
             </Container>
         </Navbar>

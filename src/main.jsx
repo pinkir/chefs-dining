@@ -13,6 +13,7 @@ import Login from './components/Login/Login.jsx';
 import Blogs from './components/Blogs/Blogs.jsx';
 import Register from './components/Register/Register.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
+import Recipes from './components/Recipes/Recipes.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,10 +40,16 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blogs></Blogs>
+      },
+
+      {
+        path: '/chefs/:id',
+        element:<Recipes></Recipes>,
+        loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
       }
 
     ]
-  },
+  }
 ]);
 
 

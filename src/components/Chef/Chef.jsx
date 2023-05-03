@@ -1,19 +1,22 @@
 import React from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
+import { FaRegThumbsUp, FaRegEye , FaRegCalendar, FaHamburger} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Chef = ({ chef }) => {
     console.log(chef)
     const { id, name, likes, picture, numberOfRecipes, yearsOfExperience } = chef;
     return (
-        <Card style={{ width: '25%', backgroundColor: '#E6E6FA' }}>
-            <Card.Img variant="top" src={picture} className='pt-2' />
+        <Card style={{ width: '25%', backgroundColor: '' }}>
+            <Card.Img variant="top" src={picture} className='pt-2 rounded' />
             <Card.Body>
-                <Card.Title>{name}</Card.Title>
-                <Card.Text>Number Of Recipes: {numberOfRecipes} <br />
-                Years Of Experience: {yearsOfExperience} <br />
-                Likes: {likes}
+                <Card.Title className='text-info'>{name}</Card.Title>
+                <Card.Text className='text-center fw-semibold'>
+                <FaHamburger></FaHamburger> Number Of Recipes: {numberOfRecipes} <br />
+                <FaRegCalendar></FaRegCalendar> Years Of Experience: {yearsOfExperience} <br />
+                <FaRegThumbsUp></FaRegThumbsUp> Likes: {likes}
                 </Card.Text>
-                <Button variant="info">View Recipe</Button>
+                <Link to={`/chefs/${id}`}><Button className='bg-info'><FaRegEye></FaRegEye> View details</Button></Link>
             </Card.Body>
         </Card>
     );

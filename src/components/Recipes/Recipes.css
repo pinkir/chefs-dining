@@ -1,5 +1,10 @@
 .chefBanner{
     background-image: url(../../assets/bgshef2.jpg);
+    background-blend-mode: overlay;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.chefImg{
+     width: 500px;
 }

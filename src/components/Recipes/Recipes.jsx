@@ -30,12 +30,14 @@ const Recipes = () => {
             <div>
                 <h3 className='text-center mt-5 pt-5 fw-bold text-warning'>Recipes</h3>
                 <p className='text-center'><i>Here are some latest recipes from this chef!!!</i></p>
+                
                 {
                     chefsRecipes.map(recipe => <RecipeCard
-                        key={chefsRecipes.id}
+                        key={recipe.id}
                         recipe={recipe}
                     ></RecipeCard>)
                 }
+                
             </div>
 
         </div>

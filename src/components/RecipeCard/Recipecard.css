@@ -1,0 +1,10 @@
+.recipeImg{
+    width: 500px;
+}
+
+.bgCard{
+    background-image: url(../../assets/bgchef1.jpg);
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

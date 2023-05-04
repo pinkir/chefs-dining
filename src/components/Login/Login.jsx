@@ -5,7 +5,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignUp, githubSignUp } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     // console.log(location);
@@ -14,6 +14,30 @@ const Login = () => {
 
 
     const [error, setError] = useState('');
+
+    const handleGoogle = () =>{
+        googleSignUp()
+        .then(result =>{
+            const loggedUser = result.user;
+            console.log(loggedUser)
+        })
+        .catch(error =>{
+            console.log("error", error.message)
+        })
+    }
+
+    const handleGithub =() =>{
+        githubSignUp()
+        .then(result =>{
+            const loggedUser = result.user;
+            console.log(loggedUser);
+
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+
+    }
 
 
     const handleLogin = (event) => {
@@ -29,7 +53,10 @@ const Login = () => {
                 console.log(loggedUser);
                 navigate(from, {replace: true})
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                console.error(error.message);
+                setError(error.message);
+            });
 
 
 
@@ -37,6 +64,7 @@ const Login = () => {
             setError(error.massage);
             return;
         }
+
     }
     return (
         <Form onSubmit={handleLogin} className='mx-auto w-25 mt-5 border rounded p-3 bg-dark bg-opacity-50 shadow p-3 mb-5 bg-body-tertiary rounded'>
@@ -67,10 +95,10 @@ const Login = () => {
             </Form.Text>
             <br />
 
-            <Button variant="btn btn-success" type="submit" className='mt-5 mb-2 ms-5'><FaGoogle></FaGoogle> Sign in with Google
+            <Button onClick={handleGoogle} variant="btn btn-success" type="submit" className='mt-5 mb-2 ms-5'><FaGoogle></FaGoogle> Sign in with Google
             </Button>
             <br />
-            <Button variant="btn btn-secondary" type="submit" className='ms-5'><FaGithub></FaGithub> Sign in with Github
+            <Button onClick={handleGithub} variant="btn btn-secondary" type="submit" className='ms-5'><FaGithub></FaGithub> Sign in with Github
             </Button>
         </Form>
     );

@@ -29,7 +29,7 @@ const Header = () => {
                         
                     </Nav>
 
-                    {user && <p><FaUserCircle></FaUserCircle>{user.displayUser}</p>}
+                    {user && <p><FaUserCircle></FaUserCircle> {user.displayUser}</p>}
 
                     {user ? 
                     <Button onClick={handleLogout} variant="btn btn-warning">LogOut</Button>

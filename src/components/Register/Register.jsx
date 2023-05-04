@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Register = () => {
+    const {createUser} =useContext(AuthContext);
+
     const [error, setError] = useState('');
+
     const handleSignUp =(event) =>{
         event.preventDefault();
         const form = event.target;
@@ -13,15 +17,26 @@ const Register = () => {
         const photo = form.photo.value;
         console.log(name, email, password, photo);
 
-        setError('');
+        createUser(email, password)
+        .then(result =>{
+            const createdUser = result.user;
+            console.log(createdUser);
+        })
+        .catch(error =>{console.error(error)})
 
-        if(password.length < 8){
-            setError('add minimum 8 characters');
+        setError('');
+        if(password.length < 6){
+            setError('add minimum 6 characters');
+            return;
+        }
+        else if(email.length == 0 && password.length == 0){
+            setError('cannot submit empty email and password fields');
             return;
         }
     }
     return (
         <Form onSubmit={handleSignUp} className='mx-auto w-25 mt-5 border rounded p-3  bg-success bg-opacity-25 shadow p-3 mb-5 bg-body-tertiary rounded'>
+            <h3>Please register</h3>
             <Form.Group className="mb-3" controlId="formBasicText">
                 <Form.Label>Your Name</Form.Label>
                 <Form.Control type="text" placeholder="Your Name" name='name' required />
@@ -36,7 +51,7 @@ const Register = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" name='password' required />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicText">
+            <Form.Group className="mb-3" controlId="formBasicPhotoText">
                 <Form.Label>Photo Url</Form.Label>
                 <Form.Control type="text" placeholder="Photo" name='photo'  />
             </Form.Group>

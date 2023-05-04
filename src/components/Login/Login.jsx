@@ -1,11 +1,40 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
+    const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate()
+
+    const [error, setError] = useState('');
+
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate('/')
+            })
+            .catch(error => console.error(error));
+
+
+
+        if (error) {
+            setError(error.massage);
+            return;
+        }
+    }
     return (
-        <Form className='mx-auto w-25 mt-5 border rounded p-3 bg-dark bg-opacity-50 shadow p-3 mb-5 bg-body-tertiary rounded'>
+        <Form onSubmit={handleLogin} className='mx-auto w-25 mt-5 border rounded p-3 bg-dark bg-opacity-50 shadow p-3 mb-5 bg-body-tertiary rounded'>
             <h3>Please login</h3>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -19,15 +48,17 @@ const Login = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" name='password' required />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
+
+            <Form.Text className="text-danger">
+                {error}
+            </Form.Text>
+
             <Button variant="warning" type="submit" >
                 Login
             </Button>
             <br />
             <Form.Text className="text-muted">
-                New to Chef's Dining?? Please <Link to='/register'>register.</Link> 
+                New to Chef's Dining?? Please <Link to='/register'>register.</Link>
             </Form.Text>
             <br />
 

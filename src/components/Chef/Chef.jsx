@@ -5,7 +5,7 @@ import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
 const Chef = ({ chef }) => {
-    console.log(chef)
+    // console.log(chef)
     const { id, name, likes, picture, numberOfRecipes, yearsOfExperience } = chef;
     return (
         <Card style={{ width: '25%', backgroundColor: '' }}>

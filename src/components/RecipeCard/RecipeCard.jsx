@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Recipecard.css'
 import { Badge, Button } from 'react-bootstrap';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaHeart } from "react-icons/fa";
 
 const RecipeCard = ({ recipe }) => {
     const { id, name, image, ingredients, cookingMethod, rating } = recipe;
+    const [favorite, setFavorite] = useState(false);
 
-    const handleToast =() =>{
+    const handleToast =(event) =>{
+        setFavorite(event.target)
         return toast('Recipe Added');
     }
     return (
@@ -28,7 +31,7 @@ const RecipeCard = ({ recipe }) => {
                         value={rating}
                         readOnly
                     /> {rating}</p></i>
-                    <Button onClick={handleToast} variant="warning">Favorite</Button>
+                    <Button onClick={handleToast} disabled={favorite} variant="warning" type="submit" className='text-light fw-bold' ><FaHeart></FaHeart> Favorite</Button>
                     <ToastContainer />
 
             </div>

@@ -12,6 +12,7 @@ const Blogs = () => {
                 <ListGroup.Item><span className='text-primary fw-bold'>What is a custom hook, and why will you create a custom hook? </span> <br /> Custom hook is a function that can be used in multiple components using other build in hooks like useState, useContext etc. <br /> We create a custom hook for reusing the common function and codes for other components.</ListGroup.Item>
 
             </ListGroup>
+            <Button variant="info">Convert to pdf</Button>
             {/* <div>
             <PDFViewer>
                 <Button onClick={}>Convert to pdf</Button>

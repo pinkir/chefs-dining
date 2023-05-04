@@ -5,10 +5,10 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter} from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div className='d-flex justify-content-around mt-5 p-5 text-light bg-dark footer'>
+        <div className='d-flex gap-2 justify-content-around mt-5 p-5 text-light bg-dark footer'>
             <div className='text-center'>
                 <h3>About us</h3>
-                <p className=' text-wrap text-center'>Lorem ipsum dolor sit amet  <br /> consectetur adipisicing elit. Sed excepturi, <br /> nulla voluptatem nisi tenetur eos!</p>
+                <p className=' text-wrap text-center'>We are passionate about sharing the flavors,<br /> culture, and history of the Mediterranean  region with the world. </p>
             </div>
             <div>
                 <h3>Follow us</h3>

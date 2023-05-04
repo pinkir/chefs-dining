@@ -29,10 +29,6 @@ const Register = () => {
             setError('add minimum 6 characters');
             return;
         }
-        else if(email.length == 0 && password.length == 0){
-            setError('cannot submit empty email and password fields');
-            return;
-        }
     }
     return (
         <Form onSubmit={handleSignUp} className='mx-auto w-25 mt-5 border rounded p-3  bg-success bg-opacity-25 shadow p-3 mb-5 bg-body-tertiary rounded'>

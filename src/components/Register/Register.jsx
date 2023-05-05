@@ -65,6 +65,9 @@ const Register = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" name='password' required />
             </Form.Group>
+            <Form.Text className="text-danger">
+                    {error}
+            </Form.Text>
             <Form.Group className="mb-3" controlId="formBasicPhotoText">
                 <Form.Label>Photo Url</Form.Label>
                 <Form.Control type="text" placeholder="Photo" name='photo'  />
@@ -73,9 +76,7 @@ const Register = () => {
                 Register
             </Button>
             <br />
-            <Form.Text className="text-danger">
-                    {error}
-            </Form.Text>
+            
             <br />
             <Form.Text className="text-muted">
                 Already registered?? Please <Link to='/login'>Login.</Link>

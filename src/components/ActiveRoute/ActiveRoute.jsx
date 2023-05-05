@@ -7,7 +7,7 @@ const ActiveRoute = ({href, children}) => {
         <NavLink
         
         href ={href}
-        className={({isActive}) => isActive ? 'active' : ''} >
+        className={({isActive}) => isActive ? ' active' : ''} >
             {children}
 
         </NavLink>

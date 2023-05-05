@@ -9,6 +9,8 @@ import salad2 from '../../assets/salad2.jpg'
 import salad3 from '../../assets/salad3.jpg'
 import salad4 from '../../assets/salad4.jpg'
 import salad5 from '../../assets/salad5.jpg'
+import salad8 from '../../assets/salad8.jpg'
+import recipe from '../../assets/recipee.jpg'
 
 const Home = () => {
     return (
@@ -48,27 +50,24 @@ const Home = () => {
             <div className='pt-5 mt-5'>
                 <div className='about text-center p-5 m-5'>
                     <i><h3 className='m-5 fw-bold'>About us</h3>
-                        <p className='fw-semibold'>We are passionate about sharing the flavors, culture, and history of the Mediterranean <br /> region with the world. Our blog features a variety of articles, recipes, and resources <br /> to help you discover the rich and diverse culinary traditions of countries such as <br />Greece, Italy, Turkey, Spain, and Morocco. <br /> Discover the vibrant flavors of the Mediterranean with our authentic recipes, crafted with the freshest ingredients <br /> and time-honored techniques.  From savory seafood dishes to hearty vegetarian options, our diverse menu will <br /> transport your taste buds to the sun-kissed shores of Greece, Italy, and beyond. <br /> Come explore the culinary wonders of the Mediterranean today!</p></i>
+                        <p className='fw-sm'>We are passionate about sharing the flavors, culture, and history of the Mediterranean <br /> region with the world. Our blog features a variety of articles, recipes, and resources <br /> to help you discover the rich and diverse culinary traditions of countries such as <br />Greece, Italy, Turkey, Spain, and Morocco. <br /> Discover the vibrant flavors of the Mediterranean with our authentic recipes, crafted with the freshest ingredients <br /> and time-honored techniques.  From savory seafood dishes to hearty vegetarian options, our diverse menu will <br /> transport your taste buds to the sun-kissed shores of Greece, Italy, and beyond. <br /> Come explore the culinary wonders of the Mediterranean today!</p></i>
 
                 </div>
             </div>
             <div className='text-center'>
-                <i><h4 className='pt-5 mt-5'>Our Latest Recipes</h4></i>
-                <Carousel>
-                    <Carousel.Item>
+                <i><h4 className='pt-5 mt-5'>Your Mediterranean Recipes</h4></i>
+                <i><p className='pb-5 mb-5'>You can add your own Mediterranean recipes in our site. </p></i>
+                <Carousel className='d-flex'>
+                    
+                    <Carousel.Item >
                         <img
-                            className="d-block w-100"
-                            src={salad1}
-                            alt="First slide"
-                        />
-                        <Carousel.Caption>
-                            <h3>Moussaka</h3>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
+                            className="d-inline w-50"
                             src={salad2}
+                            alt="Second slide"
+                        />
+                        <img
+                            className="d-inline w-50"
+                            src={recipe}
                             alt="Second slide"
                         />
 
@@ -77,10 +76,15 @@ const Home = () => {
                             
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
+                    <Carousel.Item >
                         <img
-                            className="d-block w-100"
-                            src={salad3}
+                            className="d-inline w-50"
+                            src={salad8}
+                            alt="Third slide"
+                        />
+                        <img
+                            className="d-inline w-50"
+                            src={recipe}
                             alt="Third slide"
                         />
 
@@ -88,27 +92,22 @@ const Home = () => {
                             <h3>Fattoush</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
+                    <Carousel.Item >
                         <img
-                            className="d-block w-100"
-                            src={salad4}
-                            alt="Third slide"
-                        />
-
-                        <Carousel.Caption>
-                            <h3>Tagine</h3>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
+                            className="d-inline w-50"
                             src={salad5}
                             alt="Third slide"
                         />
-
+                        <img
+                            className="d-inline w-50"
+                            src={recipe}
+                            alt="Third slide"
+                        />
+                        
                         <Carousel.Caption>
                             <h3>Ratatouille</h3>
                         </Carousel.Caption>
+                        
                     </Carousel.Item>
                 </Carousel>
             </div>

@@ -3,12 +3,13 @@ import './Footer.css'
 import footer from '../../assets/carosal2.png'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter} from "react-icons/fa";
 
+
 const Footer = () => {
     return (
-        <div className='d-flex gap-2 justify-content-around mt-5 p-5 text-light bg-dark footer'>
-            <div className='text-center'>
+        <div className='d-flex gap-4 justify-content-around mt-5 p-5 text-light bg-dark footer'>
+            <div className=''>
                 <h3>About us</h3>
-                <p className=' text-wrap text-center'>We are passionate about sharing the flavors,<br /> culture, and history of the Mediterranean  region with the world. </p>
+                <p className=''>We are passionate about sharing the flavors,<br /> culture, and history of the Mediterranean  region with the world. </p>
             </div>
             <div>
                 <h3>Follow us</h3>

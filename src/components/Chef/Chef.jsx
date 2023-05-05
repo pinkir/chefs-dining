@@ -14,13 +14,13 @@ const Chef = ({ chef }) => {
             <Card.Img variant="top" src={picture} className='pt-2 rounded' />
             
             <Card.Body>
-                <Card.Title className='text-info'>{name}</Card.Title>
-                <Card.Text className=' fw-semibold'>
+                <i><Card.Title className='text-info'>{name}</Card.Title>
+                <Card.Text className=' fw-sm'>
                 <FaHamburger></FaHamburger> Number Of Recipes: {numberOfRecipes} <br />
                 <FaRegCalendar></FaRegCalendar> Years Of Experience: {yearsOfExperience} <br />
                 <FaRegThumbsUp></FaRegThumbsUp> Likes: {likes}
                 </Card.Text>
-                <Link to={`/chefs/${id}`}><Button className='bg-info'><FaRegEye></FaRegEye> View details</Button></Link>
+                <Link to={`/chefs/${id}`}><Button className='bg-info'><FaRegEye></FaRegEye> View details</Button></Link></i>
             </Card.Body>
         </Card>
     );

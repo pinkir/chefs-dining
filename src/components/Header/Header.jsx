@@ -9,23 +9,13 @@ import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
 
-    const {user, logOut, userProfile} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
 
     
    
 
     const handleLogout =() =>{
         logOut()
-        .then()
-        .catch(error => console.log(error))
-
-    }
-    const handleProfile =(event) =>{
-        event.preventDefault;
-        const name = event.target.name.value;
-        const email = event.target.email.value;
-        console.log(name, email, user)
-        userProfile()
         .then()
         .catch(error => console.log(error))
 
@@ -44,7 +34,7 @@ const Header = () => {
                         
                     </Nav>
 
-                    {user && <p><FaUserCircle onClick={handleProfile} className='fs-4 mt-2 me-2' title={user.displayName} ></FaUserCircle></p>}
+                    {user && <p><FaUserCircle className='fs-4 mt-2 me-2' title={user.displayName} ></FaUserCircle></p>}
 
                     {user ? 
                     <Button onClick={handleLogout} variant="btn btn-warning">LogOut</Button>

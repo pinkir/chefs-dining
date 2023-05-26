@@ -11,6 +11,7 @@ import salad4 from '../../assets/salad4.jpg'
 import salad5 from '../../assets/salad5.jpg'
 import salad8 from '../../assets/salad8.jpg'
 import recipe from '../../assets/recipee.jpg'
+import { ScrollRestoration } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -111,6 +112,7 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
+            <ScrollRestoration />
         </div>
     );
 };

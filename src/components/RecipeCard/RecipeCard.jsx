@@ -6,6 +6,7 @@ import '@smastrom/react-rating/style.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaHeart } from "react-icons/fa";
+import { ScrollRestoration } from 'react-router-dom';
 
 const RecipeCard = ({ recipe }) => {
     const { id, name, image, ingredients, cookingMethod, rating } = recipe;
@@ -35,6 +36,8 @@ const RecipeCard = ({ recipe }) => {
                     <ToastContainer />
 
             </div>
+            {/* for : after re-loud page should start from top */}
+            <ScrollRestoration />
         </div>
     );
 };

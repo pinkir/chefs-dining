@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const {createUser} =useContext(AuthContext);
+    
 
     const [error, setError] = useState('');
 

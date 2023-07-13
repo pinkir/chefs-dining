@@ -12,6 +12,8 @@ import salad5 from '../../assets/salad5.jpg'
 import salad8 from '../../assets/salad8.jpg'
 import recipe from '../../assets/recipee.jpg'
 import { ScrollRestoration } from 'react-router-dom';
+import Partners from '../Partners/Partners';
+import New from '../New/New';
 
 const Home = () => {
     return (
@@ -43,6 +45,11 @@ const Home = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+            <div className='pt-5 mt-5'>
+                <div>
+                    <New></New>
+                </div>
+            </div>
             <div>
 
                 <Chefs></Chefs>
@@ -53,6 +60,11 @@ const Home = () => {
                     <i><h3 className='m-5 fw-bold'>About us</h3>
                         <p className='fw-sm'>We are passionate about sharing the flavors, culture, and history of the Mediterranean <br /> region with the world. Our blog features a variety of articles, recipes, and resources <br /> to help you discover the rich and diverse culinary traditions of countries such as <br />Greece, Italy, Turkey, Spain, and Morocco. <br /> Discover the vibrant flavors of the Mediterranean with our authentic recipes, crafted with the freshest ingredients <br /> and time-honored techniques.  From savory seafood dishes to hearty vegetarian options, our diverse menu will <br /> transport your taste buds to the sun-kissed shores of Greece, Italy, and beyond. <br /> Come explore the culinary wonders of the Mediterranean today!</p></i>
 
+                </div>
+            </div>
+            <div className='pt-5 mt-5'>
+                <div>
+                    <Partners></Partners>
                 </div>
             </div>
             <div className='text-center'>
